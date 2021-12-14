@@ -47,7 +47,6 @@ def score(dice)
       score += 100 * num
     end
 
-
     if (num == 5)
       score += 50 * (count % 3)
     end

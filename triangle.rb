@@ -16,23 +16,23 @@
 def triangle(a, b, c)
   triangle_sides = [a, b, c]
 
-  # if the side lengths are either 0 or negative, throw an exception
+  # error: if the side lengths are either 0 or negative, throw an exception
   raise TriangleError if triangle_sides.min <= 0
-  #  sort is a Ruby enumerator that compares two elements in an array at a time.
+  #  comparation: sort is a Ruby enumerator that compares two elements in an array at a time.
   a, b, c = triangle_sides.sort
   raise TriangleError if a + b <= c
 
-  # if the max and min of the array are the same,
+  # equilateral: if the max and min of the array are the same,
   if (triangle_sides.max == triangle_sides.min)
     return :equilateral
   end
 
-  # if there are 2 unique values in the array
+  # isosceles: if there are 2 unique values in the array
   if (triangle_sides.uniq.length == 2)
     return :isosceles
   end
 
-  # if there is 3 unique values in the array
+  # scalene: if there is 3 unique values in the array
   if (triangle_sides.uniq.length == 3)
     return :scalene
   end
